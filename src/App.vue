@@ -88,7 +88,14 @@ export default {
       editing: null,
       enabled: true,
       dragging: false, 
-      todos: []
+      todos: [
+        { txt: 'Complete online JavaScript course', isActive: true },
+        { txt: 'Jog around the park 3x', isActive: false },
+        { txt: '10 minutes meditation', isActive: false },
+        { txt: 'Read for 1 hour', isActive: false },
+        { txt: 'Pick up groceries', isActive: false },
+        { txt: 'Complete Todo App on Frontend Mentor', isActive: true }
+      ]
     }
   }, 
 
@@ -191,7 +198,7 @@ html, body {
 
 #app {
   width: 100vw;
-  height: 1030px;
+  height: 100vh;
 
   display: flex;
   justify-content: center;

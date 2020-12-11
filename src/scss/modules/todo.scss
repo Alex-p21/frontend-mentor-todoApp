@@ -11,7 +11,7 @@
 
     &__submit {
         width: 720px;
-        height: 85px;
+        height: 65px;
         margin-top: -140px;
         
         display: flex;
@@ -39,7 +39,7 @@
 
     &__list {
         position: relative;
-        height: 595px;
+        height: 519px;
         margin-top: 30px;
         
         border-radius: 10px 10px 0 0;
@@ -48,13 +48,14 @@
         
         overflow-y: scroll;
         scrollbar-width: 0px;
+        cursor: grab;
         
         &::-webkit-scrollbar { width: 0; }
 
         &__card {
             position: relative;
             width: 720px;
-            height: 85px;
+            height: 65px;
         
             display: flex;
             align-items: center;
@@ -88,6 +89,8 @@
                     text-decoration: line-through;
                 }
             }
+
+            &:active { cursor: grabbing; }
         }
     }
 
@@ -95,13 +98,14 @@
         
         &__desktop {
             width: 720px;
-            height: 85px;
+            height: 65px;
             
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 30px;
             border-radius: 0 0 10px 10px;
+            border-top: 1px solid var(--LineBorder);
         
             color: var(--TextColorCheck);
             font-size: 18px;
@@ -159,52 +163,12 @@
         }
     
         &__list {
-            position: relative;
-            height: 318px;
+            height: 383px;
             margin-top: 15px;            
-            
-            overflow-y: scroll;
-            scrollbar-width: 0px;
-            
-            &::-webkit-scrollbar { width: 0; }
     
             &__card {
-                position: relative;
                 width: 325px;
                 height: 48px;
-            
-                display: flex;
-                align-items: center;
-                justify-content: start;
-                
-                &::after {
-                    position: absolute;
-                    content:'';
-                    height: 1px;
-    
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-    
-                    background: var(--LineBorder);
-                }
-    
-                &:hover {  .checkbox__close { display: block; }}
-    
-                &.active {
-                    .checkbox__radio { 
-                        background:  url(./assets/images/icon-check.svg) no-repeat;
-                        background-position: center;
-                        background-size: 60%;
-                    }
-            
-                    .checkbox__radio::after { background: var(--CheckBorderHover); }
-            
-                    .checkbox__text {
-                        color: var(--TextColorCheck);
-                        text-decoration: line-through;
-                    }
-                }
             }
         }
     
