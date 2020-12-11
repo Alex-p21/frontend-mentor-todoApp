@@ -1,0 +1,39 @@
+$Mobile: 375px;
+$Desktop: 1440px;
+
+:root {
+    --HeaderBackground: url(./assets/images/bg-desktop-light.jpg) no-repeat;
+    --toggleImg: url(./assets/images/icon-moon.svg) no-repeat;
+
+    --HtmlBackground:hsl(0, 0%, 98%);
+    --ContainerColor: hsl(236, 33%, 92%);
+    --TodoContainer: hsl(0, 0%, 98%);
+    --LineBorder: hsl(234, 39%, 85%);
+    --CheckBorder: hsl(234, 39%, 85%);
+    --CheckBorderHover: linear-gradient( to right bottom,hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    
+    --Title: #FAFAFA;
+    --TextColor:  #484A59;
+    --TextColorCheck:#BFC1D6;
+    --TextColorOption: #8E8E9C;
+    --TextColorOptionHover:#484A59;
+    --TextColorOptionActive: #03369C;
+}
+
+[data-theme="dark"] {
+    --HeaderBackground: url(./assets/images/bg-desktop-dark.jpg) no-repeat;
+    --toggleImg: url(./assets/images/icon-sun.svg) no-repeat;
+
+    --HtmlBackground:#252630;
+    --ContainerColor:#16171C;
+    --TodoContainer: #252630;
+    --LineBorder: hsl(233, 14%, 35%);
+    --CheckBorder: hsl(233, 14%, 35%);
+    --CheckBorderHover: linear-gradient( to right bottom,hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+   
+    --TextColor: #BFC1D6;
+    --TextColorCheck:#767785;
+    --TextColorOption: #8E8E9C;
+    --TextColorOptionHover:#484A59;
+    --TextColorOptionActive: #9DA2EB;
+} 

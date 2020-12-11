@@ -1,0 +1,262 @@
+@import '../tools/variables.scss';
+
+.todo {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--ContainerColor);
+
+    &__submit {
+        width: 720px;
+        height: 85px;
+        margin-top: -140px;
+        
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        
+        background-color: var(--TodoContainer);
+
+        &__input {
+            width: 600px;
+            
+            border: none;
+            
+            background-color: transparent;
+
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 20px;
+          
+            &:focus { 
+                outline: none; 
+                color: var(--TextColor);
+            }
+        }
+    }
+
+    &__list {
+        position: relative;
+        height: 595px;
+        margin-top: 30px;
+        
+        border-radius: 10px 10px 0 0;
+        
+        background-color: var(--TodoContainer);
+        
+        overflow-y: scroll;
+        scrollbar-width: 0px;
+        
+        &::-webkit-scrollbar { width: 0; }
+
+        &__card {
+            position: relative;
+            width: 720px;
+            height: 85px;
+        
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            
+            &::after {
+                position: absolute;
+                content:'';
+                height: 1px;
+
+                bottom: 0;
+                left: 0;
+                right: 0;
+
+                background: var(--LineBorder);
+            }
+
+            &:hover {  .checkbox__close { display: block; }}
+
+            &.active {
+                .checkbox__radio { 
+                    background:  url(./assets/images/icon-check.svg) no-repeat;
+                    background-position: center;
+                    background-size: 60%;
+                }
+        
+                .checkbox__radio::after { background: var(--CheckBorderHover); }
+        
+                .checkbox__text {
+                    color: var(--TextColorCheck);
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+
+    &__options {
+        
+        &__desktop {
+            width: 720px;
+            height: 85px;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            border-radius: 0 0 10px 10px;
+        
+            color: var(--TextColorCheck);
+            font-size: 18px;
+            font-weight: 400;
+            background-color: var(--TodoContainer);               
+            
+            &__select {
+                width: 170px;
+                
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+
+                &__all,
+                &__active,
+                &__completed {
+                    cursor: pointer;
+                    &:hover { color: var(--TextColor); }
+                    &.active { color: var(--TextColorOptionActive); }
+                }
+            }
+
+            &__clear {
+                cursor: pointer;
+                &:hover { color: var(--TextColor); }
+            }
+        }
+
+        &__phone { display: none; }
+    }
+
+    &__info {
+        margin: 30px 0;
+        
+        font-size: 16px;
+        color: var(--TextColorOption);
+    }
+}
+
+@media (max-width: 700px) {
+    .todo {
+     
+        &__submit {
+            width: 325px;
+            height: 48px;
+            margin-top: -95px;
+                        
+            border-radius: 10px;
+    
+            &__input {
+                width: 240px;
+                font-size: 16px;
+            }
+        }
+    
+        &__list {
+            position: relative;
+            height: 318px;
+            margin-top: 15px;            
+            
+            overflow-y: scroll;
+            scrollbar-width: 0px;
+            
+            &::-webkit-scrollbar { width: 0; }
+    
+            &__card {
+                position: relative;
+                width: 325px;
+                height: 48px;
+            
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                
+                &::after {
+                    position: absolute;
+                    content:'';
+                    height: 1px;
+    
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+    
+                    background: var(--LineBorder);
+                }
+    
+                &:hover {  .checkbox__close { display: block; }}
+    
+                &.active {
+                    .checkbox__radio { 
+                        background:  url(./assets/images/icon-check.svg) no-repeat;
+                        background-position: center;
+                        background-size: 60%;
+                    }
+            
+                    .checkbox__radio::after { background: var(--CheckBorderHover); }
+            
+                    .checkbox__text {
+                        color: var(--TextColorCheck);
+                        text-decoration: line-through;
+                    }
+                }
+            }
+        }
+    
+        &__options {
+        
+            &__desktop {
+                width: 325px;
+                height: 48px;
+                
+                padding: 0 20px;
+                
+                font-size: 15px;
+
+                &__select { display: none; }
+
+                &__clear {
+                    cursor: pointer;
+                    &:hover { color: var(--TextColor); }
+                    &.active { color: var(--TextColorOptionActive); }
+                }
+            }
+            
+            &__phone {
+                width: 325px;
+                height: 48px;
+                margin-top: 15px;
+                
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 80px;
+                border-radius: 10px;
+                
+                background-color: var(--TodoContainer);
+                color: var(--TextColorCheck);
+                font-size: 15px;
+                font-weight: 400;
+
+                &__all,
+                &__active,
+                &__completed {
+                    cursor: pointer;
+                    &:hover { color: var(--TextColor); }
+                    &.active { color: var(--TextColorOptionActive); }
+                }
+            }
+        }
+
+    
+        &__info {
+            margin: 40px 0;
+            font-size: 14px;
+        }
+    }
+}
